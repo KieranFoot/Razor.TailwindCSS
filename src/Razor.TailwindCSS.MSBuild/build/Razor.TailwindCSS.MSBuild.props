@@ -1,0 +1,24 @@
+﻿<Project>
+    
+    <PropertyGroup>
+        <IsLinuxArm64 Condition="$([MSBuild]::IsOsPlatform('Linux')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == Arm64">true</IsLinuxArm64>
+        <IsLinuxX64 Condition="$([MSBuild]::IsOsPlatform('Linux')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == X64">true</IsLinuxX64>
+        <IsOsxArm64 Condition="$([MSBuild]::IsOsPlatform('OSX')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == Arm64">true</IsOsxArm64>
+        <IsOsxX64 Condition="$([MSBuild]::IsOsPlatform('OSX')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == X64">true</IsOsxX64>
+        <IsWindowsX64 Condition="$([MSBuild]::IsOsPlatform('Windows')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == X64">true</IsWindowsX64>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <TailwindCSSVersion>4.0.6</TailwindCSSVersion>
+        <TailwindBinaryURL>null</TailwindBinaryURL>
+
+        <TailwindBinaryName Condition="$(IsLinuxArm64) == true">tailwindcss-linux-arm64</TailwindBinaryName>
+        <TailwindBinaryName Condition="$(IsLinuxX64) == true">tailwindcss-linux-x64</TailwindBinaryName>
+        <TailwindBinaryName Condition="$(IsOsxArm64) == true">tailwindcss-macos-arm64</TailwindBinaryName>
+        <TailwindBinaryName Condition="$(IsOsxX64) == true">tailwindcss-macos-xm64</TailwindBinaryName>
+        <TailwindBinaryName Condition="$(IsWindowsX64) == true">tailwindcss-windows-x64.exe</TailwindBinaryName>
+        
+        <TailwindBinaryURL>https://github.com/tailwindlabs/tailwindcss/releases/download/v$(TailwindCSSVersion)/$(TailwindBinaryName)</TailwindBinaryURL>
+    </PropertyGroup>
+    
+</Project>

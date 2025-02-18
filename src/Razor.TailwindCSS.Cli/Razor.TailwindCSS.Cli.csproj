@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifiers>linux-arm64;linux-x64;osx-arm64;osx-x64;win-x64</RuntimeIdentifiers>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>tailwind</ToolCommandName>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackageId>Razor.TailwindCSS.Cli</PackageId>
+        <Authors>Kieran Foot</Authors>
+        <Description>Razor.TailwindCSS DotNet tool to initialize projects.</Description>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/KieranFoot/Razor.TailwindCSS</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/KieranFoot/Razor.TailwindCSS</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageOutputPath>../../nupkg</PackageOutputPath>
+    </PropertyGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+﻿<Project>
+
+    <Target Name="DownloadNative" BeforeTargets="CoreBuild">
+        <Message Text="Downloaading TaailwindCSS binary..." Importance="high" />
+        <DownloadFile DestinationFolder="$(MSBuildProjectDirectory)\bin\TailwindCSS" 
+                      SourceUrl="$(TailwindBinaryURL)"
+                      SkipUnchangedFiles="true" />
+    </Target>
+    
+</Project>

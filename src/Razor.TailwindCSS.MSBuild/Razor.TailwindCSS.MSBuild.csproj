@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifiers>linux-arm64;linux-x64;osx-arm64;osx-x64;win-x64</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackageId>Razor.TailwindCSS.MSBuild</PackageId>
+        <Authors>Kieran Foot</Authors>
+        <Description>MSBuild integration for Razor.TailwindCSS.</Description>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/KieranFoot/Razor.TailwindCSS</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/KieranFoot/Razor.TailwindCSS</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageOutputPath>../../nupkg</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="build/**/*" CopyToOutputDirectory="Always">
+          <Pack>true</Pack>
+          <PackagePath>build</PackagePath>
+      </None>
+    </ItemGroup>
+    
+</Project>
